@@ -1,6 +1,11 @@
 ````md
 # Sistem Penerimaan Mahasiswa Baru Pascasarjana (PMB)
 
+🔗 **Live Deployment**
+- 🌐 Frontend (Netlify): https://pmb-gsp.netlify.app
+- ⚙️ Backend API (Railway): https://gsp-pmb-be.up.railway.app/api
+- 🤖 Telegram Bot: https://t.me/pmbgspbot
+
 Aplikasi web untuk mengelola proses Penerimaan Mahasiswa Baru (PMB) Program Pascasarjana (S2 & S3), mulai dari pendaftaran pendaftar, autentikasi, pengelolaan dokumen, hingga manajemen data oleh admin dan staf.
 
 ---
@@ -14,21 +19,25 @@ Aplikasi web untuk mengelola proses Penerimaan Mahasiswa Baru (PMB) Program Pasc
 - Sequelize ORM
 - JSON Web Token (JWT)
 - Telegram Bot API (untuk autentikasi pendaftar)
+- Railway (deployment)
+- Ngrok (keperluan testing lewat local)
 
 ### Frontend
 - React.js
 - Tailwind CSS
 - Redux Toolkit
+- Netlify (deployment)
 
 ### Database
 - MySQL
+- Railway (deployment)
 
 ---
 
 ## Cara Menjalankan Aplikasi
 
 ### Backend
-1. Clone repository backend
+1. Clone repository [backend](https://github.com/gsp-pmb-app/pmb-be)
 2. Install dependencies:
    ```bash
    npm install
@@ -54,10 +63,11 @@ Aplikasi web untuk mengelola proses Penerimaan Mahasiswa Baru (PMB) Program Pasc
    ```bash
    npm run dev
    ```
+NOTE: Saat menjalankan server backend secara lokal, diperlukan **NGROK** untuk menghubungkan server lokal dengan Telegram agar webhook dapat berfungsi dengan baik.
 
 ### Frontend
 
-1. Clone repository frontend
+1. Clone repository [frontend](https://github.com/gsp-pmb-app/pmb-fe)
 2. Install dependencies:
 
    ```bash
@@ -114,17 +124,12 @@ Aplikasi web untuk mengelola proses Penerimaan Mahasiswa Baru (PMB) Program Pasc
 
 > Autentikasi menggunakan Telegram dipilih sebagai alternatif WhatsApp karena WhatsApp API bersifat berbayar.
 
-### Asumsi
-
-* Setiap pendaftar hanya memiliki satu akun aktif
-* Dokumen yang diunggah hanya berformat PDF
-* Satu pendaftar hanya dapat terhubung ke satu akun Telegram
 
 ### Kendala yang Ditemui
 
 * Deploy server backend dan database
 * Penyesuaian routing backend saat deployment di Railway
-* Karena background saya frontend, jadi di awal saya terlalu fokus di backend. Sehingga mengerjakan frontend nya terlalu terburu-buru
+* Karena background saya frontend, jadi di awal saya terlalu fokus di backend. Sehingga waktu mengerjakan frontend nya sedikit dan terlalu terburu-buru
 
 ---
 
