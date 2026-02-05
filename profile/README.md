@@ -1,18 +1,17 @@
-````md
 # Sistem Penerimaan Mahasiswa Baru Pascasarjana (PMB)
 
 🔗 **Live Deployment**
+
 - 🌐 Frontend (Netlify): https://pmb-gsp.netlify.app
 - ⚙️ Backend API (Railway): https://gsp-pmb-be.up.railway.app/api
 - 🤖 Telegram Bot: https://t.me/pmbgspbot
-
-Aplikasi web untuk mengelola proses Penerimaan Mahasiswa Baru (PMB) Program Pascasarjana (S2 & S3), mulai dari pendaftaran pendaftar, autentikasi, pengelolaan dokumen, hingga manajemen data oleh admin dan staf.
 
 ---
 
 ## Tech Stack
 
 ### Backend
+
 - Node.js
 - Express.js
 - MySQL
@@ -23,12 +22,14 @@ Aplikasi web untuk mengelola proses Penerimaan Mahasiswa Baru (PMB) Program Pasc
 - Ngrok (keperluan testing lewat local)
 
 ### Frontend
+
 - React.js
 - Tailwind CSS
 - Redux Toolkit
 - Netlify (deployment)
 
 ### Database
+
 - MySQL
 - Railway (deployment)
 
@@ -37,11 +38,13 @@ Aplikasi web untuk mengelola proses Penerimaan Mahasiswa Baru (PMB) Program Pasc
 ## Cara Menjalankan Aplikasi
 
 ### Backend
+
 1. Clone repository [backend](https://github.com/gsp-pmb-app/pmb-be)
 2. Install dependencies:
+
    ```bash
    npm install
-````
+   ```
 
 3. Konfigurasi environment variable:
 
@@ -58,12 +61,14 @@ Aplikasi web untuk mengelola proses Penerimaan Mahasiswa Baru (PMB) Program Pasc
    FE_URL=
    DATABASE_URL=
    ```
+
 4. Jalankan server:
 
    ```bash
    npm run dev
    ```
-NOTE: Saat menjalankan server backend secara lokal, diperlukan **NGROK** untuk menghubungkan server lokal dengan Telegram agar webhook dapat berfungsi dengan baik.
+
+   NOTE: Saat menjalankan server backend secara lokal, diperlukan **NGROK** untuk menghubungkan server lokal dengan Telegram agar webhook dapat berfungsi dengan baik.
 
 ### Frontend
 
@@ -73,6 +78,7 @@ NOTE: Saat menjalankan server backend secara lokal, diperlukan **NGROK** untuk m
    ```bash
    npm install
    ```
+
 3. Jalankan aplikasi:
 
    ```bash
@@ -85,23 +91,23 @@ NOTE: Saat menjalankan server backend secara lokal, diperlukan **NGROK** untuk m
 
 ### Modul Pendaftar/User
 
-* [x] Registrasi pendaftar
-* [x] Autentikasi pendaftar menggunakan **Telegram Bot**
-* [x] Login menggunakan nomor pendaftaran dan kode akses
-* [x] Update data diri pendaftar
-* [x] Upload dokumen dan foto persyaratan (namun masih disimpan di folder public backend)
+- Registrasi pendaftar
+- Autentikasi pendaftar menggunakan **Telegram Bot**
+- Login menggunakan nomor pendaftaran dan kode akses
+- Update data diri pendaftar
+- Upload dokumen dan foto persyaratan (namun masih disimpan di folder public backend)
 
 ### Modul Administrator
 
-* [x] Login admin
-* [x] CRUD Program Studi (Prodi)
-* [x] Melihat daftar pendaftar
+- Login admin
+- CRUD Program Studi (Prodi)
+- Melihat daftar pendaftar
 
 ### Modul Staff
 
-* [x] Login staff
-* [x] Melihat daftar pendaftar
-* [x] Verifikasi dokumen pendaftar
+- Login staff
+- Melihat daftar pendaftar
+- Verifikasi dokumen pendaftar
 
 ---
 
@@ -109,30 +115,31 @@ NOTE: Saat menjalankan server backend secara lokal, diperlukan **NGROK** untuk m
 
 ### Arsitektur
 
-* Aplikasi menggunakan arsitektur **client-server**
-* Backend menyediakan REST API
-* Frontend berkomunikasi dengan backend menggunakan HTTP request
-* Autentikasi dan otorisasi menggunakan **JWT** dengan Role-Based Access Control (RBAC)
+- Aplikasi menggunakan arsitektur **client-server**
+- Backend menyediakan REST API
+- Frontend berkomunikasi dengan backend menggunakan HTTP request
+- Autentikasi dan otorisasi menggunakan **JWT** dengan Role-Based Access Control (RBAC)
 
 ### Autentikasi Pendaftar
 
-* Pendaftar melakukan registrasi melalui website
-* Sistem menghasilkan token Telegram unik
-* Pendaftar melakukan verifikasi dengan bot Telegram
-* Bot Telegram mengirim **nomor pendaftaran** dan **kode akses**
-* Login dilakukan menggunakan nomor pendaftaran dan kode akses
+- Pendaftar melakukan registrasi melalui website
+- Sistem menghasilkan token Telegram unik
+- Pendaftar melakukan verifikasi dengan bot Telegram
+- Bot Telegram mengirim **nomor pendaftaran** dan **kode akses**
+- Login dilakukan menggunakan nomor pendaftaran dan kode akses
 
-> Autentikasi menggunakan Telegram dipilih sebagai alternatif WhatsApp karena WhatsApp API bersifat berbayar.
+### Asumsi
 
+- Autentikasi pendaftar dibuat menggunakan Telegram Bot sebagai pengganti WhatsApp karena WhatsApp API berbayar dan kurang praktis untuk kebutuhan testing.
+- Untuk sementara, file dokumen dan foto disimpan di folder public backend, bukan menggunakan S3 Object Storage, agar implementasi lebih sederhana sesuai waktu pengerjaan.
+- Alur pendaftaran dibuat fleksibel, di mana pendaftar bisa login terlebih dahulu lalu melengkapi data diri dan upload dokumen secara bertahap.
+- Pembatasan kuota jadwal ujian dilakukan di backend untuk mencegah peserta memilih jadwal yang sudah penuh.
+- Beberapa fitur disederhanakan untuk fokus pada alur utama sistem PMB sesuai waktu pengerjaan yang tersedia.
 
 ### Kendala yang Ditemui
 
-* Deploy server backend dan database
-* Penyesuaian routing backend saat deployment di Railway
-* Karena background saya frontend, jadi di awal saya terlalu fokus di backend. Sehingga waktu mengerjakan frontend nya sedikit dan terlalu terburu-buru
+- Deploy server backend dan database
+- Penyesuaian routing backend saat deployment di Railway
+- Karena background saya frontend, jadi di awal saya terlalu fokus di backend. Sehingga waktu mengerjakan frontend nya sedikit dan terlalu terburu-buru
 
 ---
-
-```
-
-```
