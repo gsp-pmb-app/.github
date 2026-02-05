@@ -2,9 +2,9 @@
 # Sistem Penerimaan Mahasiswa Baru Pascasarjana (PMB)
 
 🔗 **Live Deployment**
-- 🌐 Frontend (Netlify): [https://pmb-gsp.netlify.app](https://gsp-pmb.netlify.app/)
-- ⚙️ Backend API (Railway): [https://gsp-pmb-be.up.railway.app/api](https://gsp-pmb-be.up.railway.app/api)
-- 🤖 Telegram Bot: [https://t.me/pmbgspbot](https://t.me/pmbgspbot)
+- 🌐 Frontend (Netlify): https://pmb-gsp.netlify.app
+- ⚙️ Backend API (Railway): https://gsp-pmb-be.up.railway.app/api
+- 🤖 Telegram Bot: https://t.me/pmbgspbot
 
 Aplikasi web untuk mengelola proses Penerimaan Mahasiswa Baru (PMB) Program Pascasarjana (S2 & S3), mulai dari pendaftaran pendaftar, autentikasi, pengelolaan dokumen, hingga manajemen data oleh admin dan staf.
 
