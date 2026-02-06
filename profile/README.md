@@ -3,6 +3,16 @@
 🔗 **Live Deployment**
 
 - 🌐 Frontend (Netlify): https://pmb-gsp.netlify.app
+     Akun Demo:
+        - Admin:
+            username: admin
+            password: admin
+        - Staff:
+            username: staff
+            password: staff
+         - User / Pendaftar:
+            no pendaftara: PMB076620283
+            kode akses: 2VHICE
 - ⚙️ Backend API (Railway): https://gsp-pmb-be.up.railway.app/api
 - 🤖 Telegram Bot: https://t.me/pmbgspbot
 
