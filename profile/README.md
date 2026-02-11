@@ -14,8 +14,8 @@
   - password: staff
 
   **User / Pendaftar**
-  - no pendaftaran: PMB076620283
-  - kode akses: 2VHICE
+  - no pendaftaran: PMB808571887
+  - kode akses: VXOD75
 
 - ⚙️ Backend API (Railway): https://gsp-pmb-be.up.railway.app/api
 - 🤖 Telegram Bot: https://t.me/pmbgspbot
