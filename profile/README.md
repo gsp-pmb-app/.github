@@ -14,8 +14,8 @@
   - password: staff
 
   **User / Pendaftar**
-  - no pendaftaran: PMB808571887
-  - kode akses: VXOD75
+  - no pendaftaran: PMB217033579
+  - kode akses: IZI0PA
 
 - ⚙️ Backend API (Railway): https://gsp-pmb-be.up.railway.app/api
 - 🤖 Telegram Bot: https://t.me/pmbgspbot
@@ -64,7 +64,7 @@
 3. Konfigurasi environment variable:
 
    ```env
-   NOE_ENV=
+   NODE_ENV=
    PORT=
    DB_HOST=
    DB_USER=
@@ -115,17 +115,24 @@
 - Update data diri pendaftar
 - Upload dokumen dan foto persyaratan ke Cloudinary
 - Melihat data yang sudah diupload
+- Melihat, mengunduh, dan mencetak kartu ujian
+- Melihat hasil kelulusan ujian
 
 ### Modul Administrator
 
 - Login admin
+- Melihat daftar pendaftar 
 - CRUD Program Studi (Prodi)
-- Melihat daftar pendaftar
+- CRUD Ruangan
+- CRUD Jadwal
 
 ### Modul Staff
 
 - Login staff
 - Melihat daftar pendaftar
+- Melakukan verifikasi dokumen pendaftar
+- Input nilai pendaftar (mekanisme kelulusan otomatis dari backend, jika nilai >=75 maka lulus)
+- Melihat hasil yudisium berdasarkan status pendaftar (belum ujian, lulus, tidak lulus)
 
 ---
 
@@ -136,7 +143,7 @@
 - Aplikasi menggunakan arsitektur **client-server**
 - Backend menyediakan REST API
 - Frontend berkomunikasi dengan backend menggunakan HTTP request
-- Autentikasi dan otorisasi menggunakan **JWT** dengan Role-Based Access Control (RBAC)
+- Autentikasi dan otorisasi menggunakan **JWT**
 - File dan gambar disimpan menggunakan Cloudinary
 
 ### Asumsi
@@ -149,8 +156,6 @@
 
 - Deploy server backend dan database
 - Penyesuaian routing backend saat deployment di Railway
-- Karena background saya frontend, jadi di awal saya terlalu fokus di backend. Sehingga waktu mengerjakan frontend nya sedikit dan terlalu terburu-buru
-- Waktu pengerjaan terbatas sehingga modul jadwal ujian, penilaian, dan yudisium belum diimplementasikan
-- Prioritas diberikan pada fondasi sistem dan keamanan
+- Fitur manajemen user (CRUD staff/admin) belum sempat diimplementasikan karena keterbatasan waktu. Untuk keperluan demo, akun admin dan staff telah disediakan, dengan kontrol akses tetap berjalan sesuai role.
 
 ---
